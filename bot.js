@@ -133,6 +133,7 @@ client.on('message', msg => {
       console.log("winstate = " + winstate);
       if(winstate == 1){
         msg.channel.send("Dang, you won!");
+        msg.channel.send("Type !tic if you want to play again");
         return
       }
     //Checks for last round win or cat's game
@@ -140,9 +141,11 @@ client.on('message', msg => {
       winstate = showWin(gameData);
       if(winstate == 1){
         msg.channel.send("Dang, you won!");
+        msg.channel.send("Type !tic if you want to play again");
       }
       else{
         msg.channel.send("Dang, we both lost");
+        msg.channel.send("Type !tic if you want to play again");
         return;
       }
     }
@@ -165,12 +168,13 @@ client.on('message', msg => {
     winstate = showWin(gameData);
     if(winstate == 2){
       msg.channel.send("Haha, I won!");
+      msg.channel.send("Type !tic if you want to play again");
       return
     }
   }
 });
 
-client.login('Njk3MTEwODA5NjgzMTY1Mjk3.Xpcsug.rusuqvWubYNJq5VpGoAG0RhK5Fk');
+client.login(TOKEN);
 
 
 // X is "Ⅹ " on left columb, Ⅹ elsewhere
